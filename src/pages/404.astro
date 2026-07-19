@@ -2,4 +2,4 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="ページが見つかりません | ラクシゴト研究所"><article class="article"><h1>ページが見つかりません</h1><p>URLが変更されたか、ページが削除された可能性があります。</p><a class="button" href={base}>トップへ戻る</a></article></BaseLayout>
+<BaseLayout title="ページが見つかりません | ラクシゴト研究所" description="お探しのページは見つかりませんでした。記事一覧またはトップページから目的の情報をお探しください。" noindex={true}><article class="article"><h1>ページが見つかりません</h1><p>URLが変更されたか、ページが削除された可能性があります。</p><a class="button" href={base}>トップへ戻る</a></article></BaseLayout>

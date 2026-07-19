@@ -1,12 +1,15 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+const formatDate = (value) => new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo'
+}).format(new Date(value));
 ---
-<BaseLayout title={`${frontmatter.title} | ラクシゴト研究所`} description={frontmatter.description}>
+<BaseLayout title={`${frontmatter.title} | ラクシゴト研究所`} description={frontmatter.description} type="article" published={frontmatter.date} updated={frontmatter.updated}>
   <article class="article">
     <span class="badge">{frontmatter.category}</span>
     <h1>{frontmatter.title}</h1>
-    <p class="meta">公開日：{frontmatter.date}　最終確認：{frontmatter.updated}</p>
+    <p class="meta">公開日：{formatDate(frontmatter.date)}　最終確認：{formatDate(frontmatter.updated)}</p>
     <div class="notice">本記事は一般的な情報提供を目的としています。料金・機能・規約は変更されるため、契約前に必ず公式情報をご確認ください。</div>
     <slot />
   </article>

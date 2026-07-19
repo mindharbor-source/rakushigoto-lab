@@ -8,6 +8,6 @@ const isUserSite = repositoryName === `${owner}.github.io`;
 export default defineConfig({
   site: `https://${owner}.github.io`,
   base: isUserSite ? '/' : `/${repositoryName}`,
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.endsWith('/404/') })],
   trailingSlash: 'always'
 });

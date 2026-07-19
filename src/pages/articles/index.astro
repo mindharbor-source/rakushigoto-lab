@@ -14,6 +14,6 @@ const articles = [
 ['社会人向けAIスクールの選び方','ai-school-selection-guide/','学び・キャリア','目的・支援・契約条件を確認。']
 ];
 ---
-<BaseLayout title="記事一覧 | ラクシゴト研究所">
+<BaseLayout title="記事一覧 | ラクシゴト研究所" description="生成AI、業務効率化、在宅勤務に関する実践ガイドと比較記事の一覧です。">
 <section class="article" style="width:min(1080px,calc(100% - 32px))"><span class="eyebrow">Guides</span><h1>記事一覧</h1><p class="lead">ツールやサービスを申し込む前に確認したい判断基準を、実務目線で整理しています。</p><div class="grid article-list" style="margin-top:32px">{articles.map(([title,path,category,summary]) => <article class="card"><span class="badge">{category}</span><h2 style="font-size:1.2rem;margin:14px 0 8px"><a href={`${base}articles/${path}`}>{title}</a></h2><p>{summary}</p><span class="meta">ガイドを読む →</span></article>)}</div></section>
 </BaseLayout>
