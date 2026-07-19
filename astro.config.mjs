@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'rakushigoto-lab';
@@ -8,6 +9,6 @@ const isUserSite = repositoryName === `${owner}.github.io`;
 export default defineConfig({
   site: `https://${owner}.github.io`,
   base: isUserSite ? '/' : `/${repositoryName}`,
-  integrations: [sitemap({ filter: (page) => !page.endsWith('/404/') })],
+  integrations: [mdx(), sitemap({ filter: (page) => !page.endsWith('/404/') })],
   trailingSlash: 'always'
 });
