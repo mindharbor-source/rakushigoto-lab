@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const articles = [
+['会社で生成AIを安全に使うための基本チェックリスト','generative-ai-security/','AI仕事術'],
+['AI議事録ツールを選ぶ7つの基準','ai-meeting-tool-guide/','AIツール比較'],
+['文字起こしサービスの選び方','transcription-service-guide/','業務効率化'],
+['在宅勤務のインターネット回線を選ぶ基準','remote-work-internet-guide/','在宅勤務'],
+['光回線とホームルーターの違い','fiber-vs-home-router/','在宅勤務']
+];
+---
+<BaseLayout title="記事一覧 | ラクシゴト研究所">
+<section class="article"><h1>記事一覧</h1><div class="grid">{articles.map(([title,path,category]) => <article class="card"><span class="badge">{category}</span><h2><a href={`${base}articles/${path}`}>{title}</a></h2></article>)}</div></section>
+</BaseLayout>
