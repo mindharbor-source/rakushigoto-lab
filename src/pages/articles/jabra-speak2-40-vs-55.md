@@ -1,0 +1,126 @@
+---
+layout: ../../layouts/ArticleLayout.astro
+title: Jabra Speak2 40と55の違いを比較｜有線とBluetooth、どちらを選ぶ？
+description: Jabra Speak2 40とSpeak2 55の違いを比較。USB有線・Bluetooth、バッテリー、利用場所から、在宅勤務や小規模Web会議でどちらを選ぶべきか解説します。
+date: 2026-07-19
+updated: 2026-07-19
+category: 在宅勤務
+affiliate: true
+---
+
+Jabra Speak2 40とSpeak2 55の大きな違いは、**Speak2 40がUSB有線専用、Speak2 55がUSBとBluetoothの両方に対応すること**です。
+
+固定デスクでPCだけに使うならSpeak2 40、PCはUSB、スマートフォンやタブレットはBluetoothで切り替えて使うならSpeak2 55が候補です。
+
+<div class="callout">
+<strong>先に結論</strong>
+
+- 充電不要・有線の安定性・費用を重視：Speak2 40
+- Bluetooth・持ち運び・スマホ接続を重視：Speak2 55
+- 1人で音声入力だけ必要：どちらも過剰な場合があり、単体USBマイクも検討
+</div>
+
+## Speak2 40と55の主な違い
+
+| 比較項目 | Jabra Speak2 40 | Jabra Speak2 55 |
+|---|---|---|
+| 主な接続 | USB有線 | PCはUSB有線／スマホ・タブレットはBluetooth 5.1 |
+| USB端子 | 同一ケーブルでUSB-C・USB-Aに対応 | USB-C・USB-Aへの接続に対応 |
+| ワイヤレス範囲 | 非対応 | 最大30m（公式案内） |
+| バッテリー | なし・USB給電 | 内蔵、最長12時間（公式技術仕様） |
+| マイク | 4つのビームフォーミングマイク | 4つのビームフォーミングマイク |
+| スピーカー | 50mmフルレンジ | 50mmフルレンジ |
+| 防塵・防水 | IP64 | IP64 |
+| 向く場所 | 固定デスク、小会議室 | 固定デスク、会議室、出張先 |
+
+仕様や同梱品はモデル番号・販売地域で異なる場合があります。購入ページとメーカーの最新技術仕様を確認してください。
+
+## 最も大きな違いはBluetoothとバッテリー
+
+Speak2 40はBluetoothに対応しません。USBケーブルをPCへ接続して使うため、充電を気にせず、接続手順を少なくしたい人に向いています。
+
+Speak2 55はスマートフォン／タブレット向けのBluetooth 5.1に対応し、公式ページでは最大30mの動作範囲が案内されています。PCはUSB接続です。バッテリーを内蔵するため、モバイル端末から離れた場所でも使いやすい反面、充電管理が必要です。
+
+## 共通点：4マイク、50mmスピーカー、IP64
+
+両製品とも4つのビームフォーミングマイク、50mmフルレンジスピーカー、フルデュプレックスオーディオを特徴としています。話者が重なったときも双方向で会話できるよう設計されたスピーカーフォンです。
+
+IP64の防塵・防水性能も共通です。ただし、水中や強い水流で使えるという意味ではありません。通常のWeb会議機器として使用してください。
+
+## Speak2 40を選ぶべき人
+
+- 主に会社支給PCや自宅PCで使う
+- Bluetooth機器の利用が制限されている
+- 充電切れを避けたい
+- 会議のたびにペアリングしたくない
+- Speak2 55との価格差を抑えたい
+
+固定デスクでは、ケーブル接続がデメリットにならない場合があります。PCを起点に使うなら、Speak2 40の方が必要十分になりやすいでしょう。
+
+<div class="callout">
+<a href="https://af.moshimo.com/af/c/click?a_id=5704112&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Feccrew%2F5706991027273_rsl_%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Feccrew%2Fi%2F10059214%2F" rel="nofollow sponsored" referrerpolicy="no-referrer">楽天市場でJabra Speak2 40を確認する（広告）</a>
+</div>
+
+## Speak2 55を選ぶべき人
+
+- PCとスマートフォンの両方で使う
+- 自宅、会議室、出張先を移動する
+- スマートフォン／タブレットで会議中のケーブルを減らしたい
+- Bluetoothの自由度へ追加費用を払える
+- 定期的に充電する運用が苦にならない
+
+Speak2 55の価値は、単純な音質差より接続と移動の自由度にあります。Bluetoothを実際に使わないなら、差額を払う理由は小さくなります。
+
+<div class="callout">
+<a href="https://af.moshimo.com/af/c/click?a_id=5704112&amp;p_id=54&amp;pc_id=54&amp;pl_id=616&amp;url=https%3A%2F%2Fitem.rakuten.co.jp%2Feccrew%2F5706991027303_rsl_%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Feccrew%2Fi%2F10059213%2F" rel="nofollow sponsored" referrerpolicy="no-referrer">楽天市場でJabra Speak2 55を確認する（広告）</a>
+</div>
+
+## AI文字起こし用途で選ぶなら
+
+同じ場所、同じ人数、同じ会議アプリなら、接続方式だけで文字起こし精度が決まるわけではありません。全員の中央に置き、発言者との距離を短くし、同時発言を避ける方が重要です。
+
+どちらも複数人会議に向くスピーカーフォンですが、1人だけで使うなら、口元へ向ける単体マイクの方が費用を抑えられる可能性があります。[Web会議用マイクの選び方](../web-meeting-microphone-selection-guide/)で用途を先に確認してください。
+
+## MSモデルとUCモデルも確認する
+
+販売ページには「MS」「UC」などの表記がある場合があります。Teams中心なら認定やボタン連携、複数の会議アプリで使うなら互換性を確認し、会社の標準アプリに合う型番を選んでください。
+
+商品名が似ていても型番や付属品が異なることがあります。購入前に次を照合しましょう。
+
+- Speak2 40かSpeak2 55か
+- MSモデルかUCモデルか
+- USB-A／USB-Cの接続方法
+- 保証と付属ポーチ
+- 販売店の返品条件
+
+## 購入後の比較テスト
+
+1. 実際に使う席の中央へ設置する
+2. Teams／ZoomでSpeak2を入出力機器に選ぶ
+3. 各参加者が同じ文章を読み上げる
+4. 遠い席と近い席の音量差を確認する
+5. 文字起こしの誤変換数を話者ごとに記録する
+6. ミュート操作とアプリ表示を確認する
+7. Speak2 55はUSB接続とBluetooth接続の両方を試す
+
+## 迷ったときの最終判断
+
+| 質問 | はい | いいえ |
+|---|---|---|
+| スマートフォンでも使う？ | Speak2 55 | 次へ |
+| スマホ／タブレットで無線会議をしたい？ | Speak2 55 | 次へ |
+| 充電管理をなくしたい？ | Speak2 40 | 次へ |
+| 1人でマイク入力だけ必要？ | 単体USBマイクも検討 | Speak2 40を起点に比較 |
+
+## まとめ
+
+Speak2 40と55の選択では、Bluetoothを使うかどうかが最優先です。有線だけで足りるならSpeak2 40、PCとスマホを切り替え、場所を選ばず使うならSpeak2 55が合理的です。
+
+3機種全体の位置づけは[AI文字起こし向けWeb会議用マイク3選](../web-meeting-microphones-for-ai-transcription/)で確認できます。
+
+## 参考にした一次情報
+
+- [Jabra：Speak2 40](https://www.jabra.com/ja-jp/business/speakerphones/jabra-speak-series/jabra-speak2-40)
+- [Jabra：Speak2 55](https://www.jabra.com/ja-jp/business/speakerphones/jabra-speak-series/jabra-speak2-55)
+- [Jabra：Speakシリーズ](https://www.jabra.com/ja-jp/business/speakerphones/jabra-speak-series)
+- [Microsoft：Teams会議のオーディオ設定](https://support.microsoft.com/en-us/teams/meetings/manage-audio-settings-in-microsoft-teams-meetings)
