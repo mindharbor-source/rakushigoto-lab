@@ -1,14 +1,22 @@
 ---
 const base = import.meta.env.BASE_URL;
+const normalizePath = (path) => path.endsWith('/') ? path : `${path}/`;
+const currentPath = normalizePath(Astro.url.pathname);
+const homePath = normalizePath(base);
+const pagePath = (path) => normalizePath(`${base}${path}`);
+const isCurrent = (path, section = false) => {
+  const target = pagePath(path);
+  return section ? currentPath.startsWith(target) : currentPath === target;
+};
 ---
 <header>
   <div class="container nav">
-    <a class="brand" href={base}>ラクシゴト研究所</a>
+    <a class="brand" href={base} aria-current={currentPath === homePath ? 'page' : undefined}>ラクシゴト研究所</a>
     <nav aria-label="メインナビゲーション">
-      <a href={`${base}articles/`}>記事一覧</a>
-      <a href={`${base}about/`}>このサイトについて</a>
-      <a href={`${base}policy/`}>編集方針</a>
-      <a href={`${base}contact/`}>お問い合わせ</a>
+      <a href={`${base}articles/`} aria-current={isCurrent('articles/', true) ? 'page' : undefined}>記事一覧</a>
+      <a href={`${base}about/`} aria-current={isCurrent('about/') ? 'page' : undefined}>このサイトについて</a>
+      <a href={`${base}policy/`} aria-current={isCurrent('policy/') ? 'page' : undefined}>編集方針</a>
+      <a href={`${base}contact/`} aria-current={isCurrent('contact/') ? 'page' : undefined}>お問い合わせ</a>
     </nav>
   </div>
 </header>
