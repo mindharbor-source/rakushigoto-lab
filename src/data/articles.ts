@@ -6,6 +6,9 @@ export type ArticleSummary = {
 };
 
 export const articles: ArticleSummary[] = [
+  { title: 'NotebookLM（現Gemini Notebook）とは？非エンジニア会社員向け入門', path: 'notebooklm-business-guide/', category: 'AI仕事術', summary: 'Geminiとの違い、社内知識に向く理由、最初の15分を解説。' },
+  { title: 'NotebookLMで社内資料を活用する始め方', path: 'notebooklm-first-notebook/', category: 'AI仕事術', summary: '1つの業務・少数の資料から始める手順と質問例。' },
+  { title: 'NotebookLMに社内資料を入れて大丈夫？', path: 'notebooklm-security-guide/', category: 'AI仕事術', summary: '会社アカウント、機密区分、共有、引用確認のチェックリスト。' },
   { title: 'Web会議用マイクの選び方｜失敗しない7項目', path: 'web-meeting-microphone-selection-guide/', category: '在宅勤務', summary: '1人・複数人・接続方法から購入条件を整理。' },
   { title: 'ATR4800-USBを仕様レビュー', path: 'atr4800-usb-review/', category: '在宅勤務', summary: 'Web会議・文字起こしに向く人と購入前の注意点。' },
   { title: 'Jabra Speak2 40と55の違いを比較', path: 'jabra-speak2-40-vs-55/', category: '在宅勤務', summary: '有線とBluetooth、どちらを選ぶべきか比較。' },
