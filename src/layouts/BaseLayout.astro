@@ -27,13 +27,49 @@ const structuredData = type === 'article' ? {
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KFS7H4J39Y"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-KFS7H4J39Y');
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+
+      const consentKey = 'rakushigoto-consent-v1';
+      const loadAnalytics = () => {
+        if (document.querySelector('script[data-rakushigoto-ga]')) return;
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+        const tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-KFS7H4J39Y';
+        tag.dataset.rakushigotoGa = 'true';
+        document.head.appendChild(tag);
+        gtag('config', 'G-KFS7H4J39Y', { allow_google_signals: false });
+      };
+
+      const saveConsent = (choice) => {
+        localStorage.setItem(consentKey, choice);
+        document.getElementById('cookie-consent')?.setAttribute('hidden', '');
+        if (choice === 'analytics') loadAnalytics();
+        else gtag('consent', 'update', { analytics_storage: 'denied' });
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const banner = document.getElementById('cookie-consent');
+        const saved = localStorage.getItem(consentKey);
+        if (saved === 'analytics') loadAnalytics();
+        else if (!saved) banner?.removeAttribute('hidden');
+
+        document.getElementById('consent-accept')?.addEventListener('click', () => saveConsent('analytics'));
+        document.getElementById('consent-reject')?.addEventListener('click', () => saveConsent('necessary'));
+        document.querySelectorAll('[data-open-cookie-settings]').forEach((button) => {
+          button.addEventListener('click', () => banner?.removeAttribute('hidden'));
+        });
+      });
     </script>
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -58,5 +94,15 @@ const structuredData = type === 'article' ? {
     <Header />
     <main><slot /></main>
     <Footer />
+    <aside id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-consent-title" hidden>
+      <div>
+        <strong id="cookie-consent-title">アクセス解析Cookieについて</strong>
+        <p>サイト改善のため、同意いただいた場合のみGoogle Analyticsを使用します。拒否してもサイトを利用できます。詳しくは<a href={`${import.meta.env.BASE_URL}privacy/`}>プライバシーポリシー</a>をご覧ください。</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="consent-reject" class="button secondary" type="button">すべて拒否</button>
+        <button id="consent-accept" class="button" type="button">分析を許可</button>
+      </div>
+    </aside>
   </body>
 </html>
