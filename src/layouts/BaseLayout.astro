@@ -27,6 +27,14 @@ const structuredData = type === 'article' ? {
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KFS7H4J39Y"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KFS7H4J39Y');
+    </script>
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,follow" />}
