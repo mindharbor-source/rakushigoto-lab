@@ -1,0 +1,13 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout title={`${frontmatter.title} | ラクシゴト研究所`} description={frontmatter.description}>
+  <article class="article">
+    <span class="badge">{frontmatter.category}</span>
+    <h1>{frontmatter.title}</h1>
+    <p class="meta">公開日：{frontmatter.date}　最終確認：{frontmatter.updated}</p>
+    <div class="notice">本記事は一般的な情報提供を目的としています。料金・機能・規約は変更されるため、契約前に必ず公式情報をご確認ください。</div>
+    <slot />
+  </article>
+</BaseLayout>
