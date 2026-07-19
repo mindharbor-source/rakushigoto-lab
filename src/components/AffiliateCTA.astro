@@ -1,0 +1,34 @@
+---
+interface Props {
+  productName: string;
+  audience: string;
+  description: string;
+  href: string;
+  merchant: string;
+  note?: string;
+}
+
+const {
+  productName,
+  audience,
+  description,
+  href,
+  merchant,
+  note = '価格、在庫、送料、ポイント、返品条件は販売店や確認時点によって異なります。購入前にリンク先の最新情報をご確認ください。'
+} = Astro.props;
+---
+<aside class="affiliate-cta" aria-label={`${productName}の広告`}>
+  <div class="affiliate-cta-head">
+    <span class="affiliate-label">広告</span>
+    <span class="affiliate-audience">{audience}</span>
+  </div>
+  <h3>{productName}</h3>
+  <p>{description}</p>
+  <a
+    class="button affiliate-cta-button"
+    href={href}
+    rel="nofollow sponsored"
+    referrerpolicy="no-referrer"
+  >{merchant}で{productName}の最新条件を見る（広告）</a>
+  <p class="affiliate-note">{note}</p>
+</aside>
