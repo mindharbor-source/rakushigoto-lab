@@ -58,6 +58,35 @@ const structuredData = type === 'article' ? {
         else gtag('consent', 'update', { analytics_storage: 'denied' });
       };
 
+      const trackLinkClick = (link) => {
+        if (localStorage.getItem(consentKey) !== 'analytics') return;
+
+        const destination = new URL(link.href, window.location.href);
+        const linkText = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+        const commonParameters = {
+          link_url: destination.href,
+          link_text: linkText,
+          source_path: window.location.pathname
+        };
+
+        if (destination.hostname === 'af.moshimo.com') {
+          gtag('event', 'affiliate_click', {
+            ...commonParameters,
+            affiliate_network: 'moshimo',
+            merchant: 'rakuten'
+          });
+          return;
+        }
+
+        if (
+          destination.origin === window.location.origin &&
+          destination.pathname.includes('/articles/') &&
+          destination.pathname !== window.location.pathname
+        ) {
+          gtag('event', 'article_click', commonParameters);
+        }
+      };
+
       document.addEventListener('DOMContentLoaded', () => {
         const banner = document.getElementById('cookie-consent');
         const saved = localStorage.getItem(consentKey);
@@ -68,6 +97,10 @@ const structuredData = type === 'article' ? {
         document.getElementById('consent-reject')?.addEventListener('click', () => saveConsent('necessary'));
         document.querySelectorAll('[data-open-cookie-settings]').forEach((button) => {
           button.addEventListener('click', () => banner?.removeAttribute('hidden'));
+        });
+        document.addEventListener('click', (event) => {
+          const link = event.target instanceof Element ? event.target.closest('a') : null;
+          if (link) trackLinkClick(link);
         });
       });
     </script>
