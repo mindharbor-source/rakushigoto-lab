@@ -1,17 +1,26 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-const { frontmatter } = Astro.props;
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+const { frontmatter = Astro.props, headings = [] } = Astro.props;
+const currentPath = Astro.url.pathname.split('/articles/')[1] ?? '';
 const formatDate = (value) => new Intl.DateTimeFormat('ja-JP', {
   year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo'
 }).format(new Date(value));
 ---
 <BaseLayout title={`${frontmatter.title} | ラクシゴト研究所`} description={frontmatter.description} type="article" published={frontmatter.date} updated={frontmatter.updated}>
+  <div class="article-shell">
+    <Breadcrumb title={frontmatter.title} />
   <article class="article">
     <span class="badge">{frontmatter.category}</span>
     <h1>{frontmatter.title}</h1>
     <p class="meta">公開日：{formatDate(frontmatter.date)}　最終確認：{formatDate(frontmatter.updated)}</p>
     {frontmatter.affiliate && <div class="affiliate-disclosure"><strong>広告</strong><span>この記事にはアフィリエイトリンクが含まれます。リンク先で購入・申込みが行われた場合、当サイトが紹介料を受け取ることがあります。</span></div>}
     <div class="notice">本記事は一般的な情報提供を目的としています。料金・機能・規約は変更されるため、契約前に必ず公式情報をご確認ください。</div>
+    <TableOfContents headings={headings} />
     <slot />
+    <RelatedArticles currentPath={currentPath} category={frontmatter.category} />
   </article>
+  </div>
 </BaseLayout>

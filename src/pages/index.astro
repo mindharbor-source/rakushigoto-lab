@@ -1,19 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { articles } from '../data/articles';
 const base = import.meta.env.BASE_URL;
-const articles = [
-  ['Web会議用マイクの選び方｜失敗しない7項目','articles/web-meeting-microphone-selection-guide/','在宅勤務','1人・複数人・接続方法から購入条件を整理。'],
-  ['ATR4800-USBを仕様レビュー','articles/atr4800-usb-review/','在宅勤務','Web会議・文字起こしに向く人と購入前の注意点。'],
-  ['Jabra Speak2 40と55の違いを比較','articles/jabra-speak2-40-vs-55/','在宅勤務','有線とBluetoothの差を購入目的から比較。'],
-  ['AI文字起こしの精度を上げる7つの方法','articles/improve-ai-transcription-accuracy/','AI仕事術','誤変換を減らす録音・マイク・話し方のチェックリスト。'],
-  ['AI文字起こしの精度を上げたい人向けWeb会議用マイク3選','articles/web-meeting-microphones-for-ai-transcription/','在宅勤務','AI議事録で聞き取りやすい音声を残すための3機種を比較。'],
-  ['会社で生成AIを安全に使うための基本チェックリスト','articles/generative-ai-security/','AI仕事術','入力前に確認したい情報管理と社内ルールを整理。'],
-  ['AI議事録ツールを選ぶ7つの基準','articles/ai-meeting-tool-guide/','AIツール比較','料金だけでは分からない比較ポイントを解説。'],
-  ['文字起こしサービスの選び方','articles/transcription-service-guide/','業務効率化','精度・話者分離・保存条件から選ぶ方法。'],
-  ['在宅勤務のインターネット回線を選ぶ基準','articles/remote-work-internet-guide/','在宅勤務','会議やVPNで困らない回線選びの考え方。'],
-  ['光回線とホームルーターの違い','articles/fiber-vs-home-router/','在宅勤務','速度、工事、解約まで含めて比較。'],
-  ['会社員向け生成AIツールの選び方','articles/business-ai-tool-guide/','AIツール比較','用途・セキュリティ・費用から候補を絞る。']
-];
+const latestArticles = articles.slice(0, 11);
 ---
 <BaseLayout title="ラクシゴト研究所 | AI・業務効率化・在宅勤務の実践メディア" description="非エンジニアの会社員向けに、生成AI、業務効率化サービス、在宅勤務環境の選び方と実践方法を届けます。">
   <section class="hero container">
@@ -38,7 +27,7 @@ const articles = [
   <section class="section container">
     <div class="section-head"><div><span class="eyebrow">Latest guides</span><h2>新着記事</h2></div><a href={`${base}articles/`}>すべての記事を見る →</a></div>
     <div class="grid article-list">
-      {articles.map(([title,path,category,summary]) => <article class="card"><span class="badge">{category}</span><h3><a href={`${base}${path}`}>{title}</a></h3><p>{summary}</p><span class="meta">約5〜8分で読めます</span></article>)}
+      {latestArticles.map((article) => <article class="card"><span class="badge">{article.category}</span><h3><a href={`${base}articles/${article.path}`}>{article.title}</a></h3><p>{article.summary}</p><span class="meta">約5〜8分で読めます</span></article>)}
     </div>
   </section>
 

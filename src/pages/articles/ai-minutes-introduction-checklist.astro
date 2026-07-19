@@ -1,6 +1,13 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+const frontmatter = { title: 'AI議事録ツール導入前チェックリスト', description: 'AI議事録ツールを導入する前に確認したい録音同意、保存先、精度、運用ルールを整理します。', date: '2026-07-19', updated: '2026-07-19', category: 'AI仕事術' };
+const headings = [
+  { depth: 2, slug: 'before-meeting', text: '会議前に決めること' },
+  { depth: 2, slug: 'roles', text: '運用で必要な役割' },
+  { depth: 2, slug: 'evaluation', text: '精度評価の方法' },
+  { depth: 2, slug: 'trial', text: '無料トライアルで試す会議' }
+];
 ---
-<BaseLayout title="AI議事録ツール導入前チェックリスト | ラクシゴト研究所" description="AI議事録ツールを導入する前に確認したい録音同意、保存先、精度、運用ルールを整理します。" type="article" published="2026-07-19" updated="2026-07-19">
-<article class="article"><span class="badge">AI仕事術</span><h1>AI議事録ツール導入前チェックリスト</h1><p class="meta">公開日：2026年7月19日　最終確認：2026年7月19日</p><p>AI議事録は便利ですが、録音の扱いと保存ルールが曖昧なまま導入すると、現場で使われなくなります。</p><div class="notice"><strong>導入順序：</strong>ツール選定より先に、録音同意・保存期間・確認担当を決めます。</div><h2>会議前に決めること</h2><ul><li>参加者への録音・文字起こしの案内方法</li><li>録音禁止の会議区分</li><li>外部参加者がいる場合の扱い</li></ul><h2>運用で必要な役割</h2><table><thead><tr><th>役割</th><th>担当内容</th></tr></thead><tbody><tr><td>会議主催者</td><td>録音案内と利用可否の確認</td></tr><tr><td>確認担当</td><td>固有名詞、数値、決定事項の修正</td></tr><tr><td>管理者</td><td>保存期間、権限、退職者データの管理</td></tr></tbody></table><h2>精度評価の方法</h2><p>「全文が正確か」ではなく、決定事項、担当者、期限を正しく拾えるかを評価します。実務ではこの3点が最も重要です。</p><p>誤変換が多い場合は、<a href={`${import.meta.env.BASE_URL}articles/improve-ai-transcription-accuracy/`}>AI文字起こしの精度を上げる7つの方法</a>で、録音環境と入力音量を確認してください。機材を見直す場合は、<a href={`${import.meta.env.BASE_URL}articles/web-meeting-microphones-for-ai-transcription/`}>Web会議用マイク3選</a>も比較できます。</p><h2>無料トライアルで試す会議</h2><ul><li>2〜4人の短い社内会議</li><li>専門用語が少ない定例会</li><li>結論が明確な打ち合わせ</li></ul><div class="callout"><strong>避けたい始め方：</strong>重要顧客との会議や機密性の高い会議を最初の検証対象にしないこと。</div><h2>関連記事</h2><ul><li><a href={`${import.meta.env.BASE_URL}articles/ai-meeting-tool-guide/`}>AI議事録ツールを選ぶ7つの基準</a></li><li><a href={`${import.meta.env.BASE_URL}articles/transcription-service-guide/`}>文字起こしサービスの選び方</a></li></ul></article>
-</BaseLayout>
+<ArticleLayout frontmatter={frontmatter} headings={headings}>
+<p>AI議事録は便利ですが、録音の扱いと保存ルールが曖昧なまま導入すると、現場で使われなくなります。</p><div class="notice"><strong>導入順序：</strong>ツール選定より先に、録音同意・保存期間・確認担当を決めます。</div><h2 id="before-meeting">会議前に決めること</h2><ul><li>参加者への録音・文字起こしの案内方法</li><li>録音禁止の会議区分</li><li>外部参加者がいる場合の扱い</li></ul><h2 id="roles">運用で必要な役割</h2><table><thead><tr><th>役割</th><th>担当内容</th></tr></thead><tbody><tr><td>会議主催者</td><td>録音案内と利用可否の確認</td></tr><tr><td>確認担当</td><td>固有名詞、数値、決定事項の修正</td></tr><tr><td>管理者</td><td>保存期間、権限、退職者データの管理</td></tr></tbody></table><h2 id="evaluation">精度評価の方法</h2><p>「全文が正確か」ではなく、決定事項、担当者、期限を正しく拾えるかを評価します。実務ではこの3点が最も重要です。</p><p>誤変換が多い場合は、<a href={`${import.meta.env.BASE_URL}articles/improve-ai-transcription-accuracy/`}>AI文字起こしの精度を上げる7つの方法</a>で、録音環境と入力音量を確認してください。機材を見直す場合は、<a href={`${import.meta.env.BASE_URL}articles/web-meeting-microphones-for-ai-transcription/`}>Web会議用マイク3選</a>も比較できます。</p><h2 id="trial">無料トライアルで試す会議</h2><ul><li>2〜4人の短い社内会議</li><li>専門用語が少ない定例会</li><li>結論が明確な打ち合わせ</li></ul><div class="callout"><strong>避けたい始め方：</strong>重要顧客との会議や機密性の高い会議を最初の検証対象にしないこと。</div>
+</ArticleLayout>

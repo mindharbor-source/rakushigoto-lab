@@ -1,0 +1,15 @@
+---
+type Heading = { depth: number; slug: string; text: string };
+const { headings = [] } = Astro.props as { headings?: Heading[] };
+const items = headings.filter((heading) => heading.depth === 2);
+---
+{items.length > 1 && (
+  <details class="toc" open>
+    <summary>この記事の目次</summary>
+    <nav aria-label="記事の目次">
+      <ol>
+        {items.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}
+      </ol>
+    </nav>
+  </details>
+)}
