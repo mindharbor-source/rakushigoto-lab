@@ -6,10 +6,11 @@ const latestArticles = articles.slice(0, 11);
 ---
 <BaseLayout title="ラクシゴト研究所 | AI・業務効率化・在宅勤務の実践メディア" description="非エンジニアの会社員向けに、生成AI、業務効率化サービス、在宅勤務環境の選び方と実践方法を届けます。">
   <section class="hero container">
+    <span class="hero-note" aria-hidden="true">WORK NOTE 001</span>
     <span class="badge">非エンジニア会社員向け</span>
     <h1>仕事を、少しラクに。<br />選ぶ前に、判断基準を。</h1>
     <p class="lead">AIツール、業務サービス、在宅勤務環境について、広告だけに左右されない比較軸と導入手順を整理する実践メディアです。</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+    <div class="hero-actions">
       <a class="button" href={`${base}articles/`}>記事を読む</a>
       <a class="button secondary" href={`${base}about/`}>編集方針を見る</a>
     </div>
@@ -17,7 +18,7 @@ const latestArticles = articles.slice(0, 11);
 
   <section class="section container">
     <div class="section-head"><div><span class="eyebrow">What we cover</span><h2>このサイトが提供するもの</h2></div></div>
-    <div class="grid">
+    <div class="grid feature-grid">
       <div class="card feature-card"><h3>AI仕事術</h3><p>営業・事務・管理職が、専門知識なしで試せる活用方法を解説します。</p></div>
       <div class="card feature-card"><h3>比較の判断基準</h3><p>料金だけでなく、セキュリティ、解約条件、導入負荷まで整理します。</p></div>
       <div class="card feature-card"><h3>在宅勤務環境</h3><p>回線、PC、周辺機器を「仕事で困らない」観点から選びます。</p></div>
@@ -32,6 +33,6 @@ const latestArticles = articles.slice(0, 11);
   </section>
 
   <section class="section container">
-    <div class="cta-panel"><div><h2 style="margin:0">迷ったら、まず判断基準から。</h2><p>ランキングではなく、選ぶための軸を先に確認できます。</p></div><a class="button" href={`${base}articles/`}>ガイドを確認する</a></div>
+    <div class="cta-panel"><div><h2>迷ったら、まず判断基準から。</h2><p>ランキングではなく、選ぶための軸を先に確認できます。</p></div><a class="button" href={`${base}articles/`}>ガイドを確認する</a></div>
   </section>
 </BaseLayout>
