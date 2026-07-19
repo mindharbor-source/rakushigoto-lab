@@ -49,8 +49,16 @@ th { background:#eef5f3; }
 .cta-panel .button { background:white; color:var(--accent-dark); box-shadow:none; white-space:nowrap; }
 footer { border-top:1px solid var(--line); background:var(--panel); margin-top:64px; padding:38px 0; color:var(--muted); font-size:.9rem; }
 footer .links { display:flex; gap:16px; flex-wrap:wrap; }
+.footer-link { appearance:none; border:0; padding:0; background:none; color:var(--accent); font:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; }
+.cookie-consent { position:fixed; z-index:100; left:16px; right:16px; bottom:16px; margin:auto; width:min(920px,calc(100% - 32px)); display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px; border:1px solid var(--line); border-radius:16px; background:var(--panel); box-shadow:0 18px 60px rgba(22,33,41,.22); }
+.cookie-consent[hidden] { display:none; }
+.cookie-consent p { margin:.35rem 0 0; color:var(--muted); }
+.cookie-actions { display:flex; gap:10px; flex-shrink:0; }
+.affiliate-disclosure { display:flex; gap:12px; align-items:flex-start; padding:16px 18px; margin:22px 0; border:2px solid #b06400; border-radius:12px; background:#fff8ea; color:#3e2b12; }
+.affiliate-disclosure strong { background:#8b4f00; color:white; border-radius:5px; padding:2px 8px; flex-shrink:0; }
+.form-shell iframe { border:0; margin-top:20px; }
 .form-shell { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:26px; box-shadow:var(--shadow); }
 .form-shell label { display:block; font-weight:750; margin:16px 0 6px; }
 .form-shell input,.form-shell select,.form-shell textarea { width:100%; border:1px solid #cbd7d5; border-radius:10px; padding:12px; font:inherit; background:white; }
 .form-shell textarea { min-height:170px; resize:vertical; }
-@media (max-width:720px){ .nav{align-items:flex-start;padding:14px 0;flex-direction:column}.hero{padding:58px 0 40px}.hero::after{width:150px;height:150px}.hero h1{font-size:2.65rem}.section-head,.cta-panel{align-items:flex-start;flex-direction:column}nav{gap:12px}.card{padding:22px} }
+@media (max-width:720px){ .nav{align-items:flex-start;padding:14px 0;flex-direction:column}.hero{padding:58px 0 40px}.hero::after{width:150px;height:150px}.hero h1{font-size:2.65rem}.section-head,.cta-panel,.cookie-consent{align-items:flex-start;flex-direction:column}nav{gap:12px}.card{padding:22px}.cookie-actions{width:100%;flex-direction:column-reverse}.cookie-actions .button{width:100%;text-align:center}.affiliate-disclosure{flex-direction:column} }
