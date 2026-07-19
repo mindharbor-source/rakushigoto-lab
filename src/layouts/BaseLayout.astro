@@ -124,8 +124,9 @@ const structuredData = type === 'article' ? {
     <title>{title}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
     <Header />
-    <main><slot /></main>
+    <main id="main-content" tabindex="-1"><slot /></main>
     <Footer />
     <aside id="cookie-consent" class="cookie-consent" aria-labelledby="cookie-consent-title" hidden>
       <div>
