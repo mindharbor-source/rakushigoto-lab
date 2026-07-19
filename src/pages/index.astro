@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+const articles = [
+  ['会社で生成AIを安全に使うための基本チェックリスト','articles/generative-ai-security/','AI仕事術'],
+  ['AI議事録ツールを選ぶ7つの基準','articles/ai-meeting-tool-guide/','AIツール比較'],
+  ['文字起こしサービスの選び方','articles/transcription-service-guide/','業務効率化'],
+  ['在宅勤務のインターネット回線を選ぶ基準','articles/remote-work-internet-guide/','在宅勤務'],
+  ['光回線とホームルーターの違い','articles/fiber-vs-home-router/','在宅勤務']
+];
+---
+<BaseLayout title="ラクシゴト研究所 | AI・業務効率化・在宅勤務の実践メディア">
+  <section class="hero container">
+    <span class="badge">非エンジニア会社員向け</span>
+    <h1>仕事を、少しラクに。<br />選ぶ前に、判断基準を。</h1>
+    <p class="lead">AIツール、業務サービス、在宅勤務環境について、広告だけに左右されない比較軸と導入手順を整理する実践メディアです。</p>
+    <a class="button" href={`${base}articles/`}>記事を読む</a>
+  </section>
+  <section class="section container">
+    <h2>このサイトが提供するもの</h2>
+    <div class="grid">
+      <div class="card"><h3>AI仕事術</h3><p>営業・事務・管理職が、専門知識なしで試せる活用方法を解説します。</p></div>
+      <div class="card"><h3>比較の判断基準</h3><p>料金だけでなく、セキュリティ、解約条件、導入負荷まで整理します。</p></div>
+      <div class="card"><h3>在宅勤務環境</h3><p>回線、PC、周辺機器を「仕事で困らない」観点から選びます。</p></div>
+    </div>
+  </section>
+  <section class="section container">
+    <h2>新着記事</h2>
+    <div class="grid">
+      {articles.map(([title,path,category]) => <article class="card"><span class="badge">{category}</span><h3><a href={`${base}${path}`}>{title}</a></h3></article>)}
+    </div>
+  </section>
+</BaseLayout>
