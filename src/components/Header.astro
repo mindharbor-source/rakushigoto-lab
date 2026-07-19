@@ -11,8 +11,14 @@ const isCurrent = (path, section = false) => {
 ---
 <header>
   <div class="container nav">
-    <a class="brand" href={base} aria-current={currentPath === homePath ? 'page' : undefined}>ラクシゴト研究所</a>
-    <nav aria-label="メインナビゲーション">
+    <div class="nav-bar">
+      <a class="brand" href={base} aria-current={currentPath === homePath ? 'page' : undefined}>ラクシゴト研究所</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span>メニュー</span>
+      </button>
+    </div>
+    <nav id="main-navigation" class="site-nav" aria-label="メインナビゲーション" data-open="false">
       <a href={`${base}articles/`} aria-current={isCurrent('articles/', true) ? 'page' : undefined}>記事一覧</a>
       <a href={`${base}about/`} aria-current={isCurrent('about/') ? 'page' : undefined}>このサイトについて</a>
       <a href={`${base}policy/`} aria-current={isCurrent('policy/') ? 'page' : undefined}>編集方針</a>
@@ -20,3 +26,32 @@ const isCurrent = (path, section = false) => {
     </nav>
   </div>
 </header>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const navigation = document.querySelector<HTMLElement>('#main-navigation');
+
+  if (toggle && navigation) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      navigation.dataset.open = String(open);
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target instanceof Element && event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  }
+</script>
