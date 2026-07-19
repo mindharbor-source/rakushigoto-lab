@@ -10,6 +10,7 @@ const formatDate = (value) => new Intl.DateTimeFormat('ja-JP', {
     <span class="badge">{frontmatter.category}</span>
     <h1>{frontmatter.title}</h1>
     <p class="meta">公開日：{formatDate(frontmatter.date)}　最終確認：{formatDate(frontmatter.updated)}</p>
+    {frontmatter.affiliate && <div class="affiliate-disclosure"><strong>広告</strong><span>この記事にはアフィリエイトリンクが含まれます。リンク先で購入・申込みが行われた場合、当サイトが紹介料を受け取ることがあります。</span></div>}
     <div class="notice">本記事は一般的な情報提供を目的としています。料金・機能・規約は変更されるため、契約前に必ず公式情報をご確認ください。</div>
     <slot />
   </article>

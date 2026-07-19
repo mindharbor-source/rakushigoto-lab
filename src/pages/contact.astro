@@ -4,7 +4,21 @@ const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScNdExYLqAcEnYLC_6DGrZ
 ---
 <BaseLayout title="お問い合わせ | ラクシゴト研究所" description="ラクシゴト研究所への記事訂正、掲載、その他のお問い合わせ窓口です。">
 <article class="article"><span class="eyebrow">Contact</span><h1>お問い合わせ</h1><p>記事内容の訂正依頼、掲載に関するご連絡、その他のお問い合わせを受け付けています。個人のメールアドレスはサイト上に掲載していません。</p>
-<div class="form-shell"><iframe src={formUrl} width="100%" height="920" frameborder="0" marginheight="0" marginwidth="0" title="ラクシゴト研究所 お問い合わせフォーム" loading="lazy">読み込んでいます…</iframe></div>
-<p class="meta">フォームが表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLScNdExYLqAcEnYLC_6DGrZVwu1zrHvPxTCEfWO3GOBWumDfOQ/viewform" target="_blank" rel="noopener noreferrer">別タブでお問い合わせフォームを開く</a>ことができます。</p>
+<div class="form-shell"><p>お問い合わせフォームはGoogleフォームを使用します。ボタンを押すまでGoogleへの通信は行いません。フォームでは、返信用メールアドレスとお問い合わせ内容を取得します。</p><button id="load-contact-form" class="button" type="button">Googleフォームを表示</button><div id="contact-form-container"></div></div>
+<p class="meta"><a href={formUrl.replace('?embedded=true', '')} target="_blank" rel="noopener noreferrer">別タブでお問い合わせフォームを開く</a>こともできます。リンクを開くとGoogleのプライバシーポリシーが適用されます。</p>
 <h2>返信について</h2><p>内容を確認し、返信が必要と判断した場合にご連絡します。営業・勧誘、内容が不明確な連絡には返信できない場合があります。</p><h2>記事の訂正依頼</h2><p>該当ページのURL、訂正が必要な箇所、確認可能な一次情報を記載してください。</p></article>
 </BaseLayout>
+<script define:vars={{ formUrl }}>
+  document.getElementById('load-contact-form')?.addEventListener('click', (event) => {
+    const container = document.getElementById('contact-form-container');
+    if (!container || container.querySelector('iframe')) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = formUrl;
+    iframe.width = '100%';
+    iframe.height = '920';
+    iframe.title = 'ラクシゴト研究所 お問い合わせフォーム';
+    iframe.loading = 'lazy';
+    container.appendChild(iframe);
+    event.currentTarget.remove();
+  });
+</script>
