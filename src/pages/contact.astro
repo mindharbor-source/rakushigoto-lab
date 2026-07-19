@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const formUrl = '';
 ---
-<BaseLayout title="お問い合わせ | ラクシゴト研究所">
-<article class="article"><h1>お問い合わせ</h1><p>記事内容の訂正依頼、掲載に関するご連絡、その他のお問い合わせを受け付けています。</p><div class="notice"><strong>公開前設定項目：</strong>お問い合わせフォームURLまたは公開用メールアドレスを確定後、ここに設置します。個人用メールアドレスを無断で公開しないため、現在は受付開始前です。</div><p>原則として、内容を確認のうえ必要な場合に返信します。営業・勧誘には返信できない場合があります。</p></article>
+<BaseLayout title="お問い合わせ | ラクシゴト研究所" description="ラクシゴト研究所への記事訂正、掲載、その他のお問い合わせ窓口です。">
+<article class="article"><span class="eyebrow">Contact</span><h1>お問い合わせ</h1><p>記事内容の訂正依頼、掲載に関するご連絡、その他のお問い合わせを受け付けています。個人のメールアドレスはサイト上に掲載しません。</p>
+{formUrl ? <div class="form-shell"><iframe src={formUrl} width="100%" height="760" frameborder="0" marginheight="0" marginwidth="0" title="お問い合わせフォーム">読み込んでいます…</iframe></div> : <div class="form-shell"><span class="badge">フォーム準備中</span><h2>安全な外部フォームを接続します</h2><p>迷惑メール対策と個人情報保護のため、メールアドレスを公開せず、GoogleフォームまたはTallyのフォームをこのページ内に埋め込む予定です。</p><div class="notice"><strong>受付予定項目：</strong>お名前、返信先メールアドレス、お問い合わせ種別、お問い合わせ内容。</div><p class="meta">フォーム接続後も、入力された情報はお問い合わせへの対応目的にのみ利用します。</p></div>}
+<h2>返信について</h2><p>内容を確認し、返信が必要と判断した場合にご連絡します。営業・勧誘、内容が不明確な連絡には返信できない場合があります。</p><h2>記事の訂正依頼</h2><p>該当ページのURL、訂正が必要な箇所、確認可能な一次情報を記載してください。</p></article>
 </BaseLayout>
