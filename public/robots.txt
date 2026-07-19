@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mindharbor-source.github.io/rakushigoto-lab/sitemap-index.xml
