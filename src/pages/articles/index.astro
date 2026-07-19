@@ -2,13 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 const articles = [
-['会社で生成AIを安全に使うための基本チェックリスト','generative-ai-security/','AI仕事術'],
-['AI議事録ツールを選ぶ7つの基準','ai-meeting-tool-guide/','AIツール比較'],
-['文字起こしサービスの選び方','transcription-service-guide/','業務効率化'],
-['在宅勤務のインターネット回線を選ぶ基準','remote-work-internet-guide/','在宅勤務'],
-['光回線とホームルーターの違い','fiber-vs-home-router/','在宅勤務']
+['会社で生成AIを安全に使うための基本チェックリスト','generative-ai-security/','AI仕事術','情報漏えいを避けるための基本ルール。'],
+['AI議事録ツールを選ぶ7つの基準','ai-meeting-tool-guide/','AIツール比較','料金・精度・保存条件を比較。'],
+['文字起こしサービスの選び方','transcription-service-guide/','業務効率化','用途に合う精度と機能を整理。'],
+['在宅勤務のインターネット回線を選ぶ基準','remote-work-internet-guide/','在宅勤務','会議やVPNで困らない選び方。'],
+['光回線とホームルーターの違い','fiber-vs-home-router/','在宅勤務','工事・速度・契約条件を比較。'],
+['会社員向け生成AIツールの選び方','business-ai-tool-guide/','AIツール比較','用途と情報管理から候補を絞る。'],
+['AI議事録ツール導入前チェックリスト','ai-minutes-introduction-checklist/','AI仕事術','録音同意と運用ルールを確認。'],
+['在宅勤務用PCの選び方','remote-work-pc-guide/','在宅勤務','性能・端子・保証の判断基準。'],
+['短期利用向けポケットWi-Fiの選び方','pocket-wifi-short-term-guide/','在宅勤務','総額と返却条件から比較。'],
+['社会人向けAIスクールの選び方','ai-school-selection-guide/','学び・キャリア','目的・支援・契約条件を確認。']
 ];
 ---
 <BaseLayout title="記事一覧 | ラクシゴト研究所">
-<section class="article"><h1>記事一覧</h1><div class="grid">{articles.map(([title,path,category]) => <article class="card"><span class="badge">{category}</span><h2><a href={`${base}articles/${path}`}>{title}</a></h2></article>)}</div></section>
+<section class="article" style="width:min(1080px,calc(100% - 32px))"><span class="eyebrow">Guides</span><h1>記事一覧</h1><p class="lead">ツールやサービスを申し込む前に確認したい判断基準を、実務目線で整理しています。</p><div class="grid article-list" style="margin-top:32px">{articles.map(([title,path,category,summary]) => <article class="card"><span class="badge">{category}</span><h2 style="font-size:1.2rem;margin:14px 0 8px"><a href={`${base}articles/${path}`}>{title}</a></h2><p>{summary}</p><span class="meta">ガイドを読む →</span></article>)}</div></section>
 </BaseLayout>
