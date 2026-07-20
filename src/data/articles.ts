@@ -6,6 +6,7 @@ export type ArticleSummary = {
 };
 
 export const articles: ArticleSummary[] = [
+  { title: 'Xの「AIで簡単に稼げる」情報商材は買うべき？', path: 'ai-info-product-checklist/', category: 'AI副業', summary: '実績、総額、返金条件、販売者情報を10項目で確認。' },
   { title: 'NotebookLM（現Gemini Notebook）とは？非エンジニア会社員向け入門', path: 'notebooklm-business-guide/', category: 'AI仕事術', summary: 'Geminiとの違い、社内知識に向く理由、最初の15分を解説。' },
   { title: 'NotebookLMで社内資料を活用する始め方', path: 'notebooklm-first-notebook/', category: 'AI仕事術', summary: '1つの業務・少数の資料から始める手順と質問例。' },
   { title: 'NotebookLMに社内資料を入れて大丈夫？', path: 'notebooklm-security-guide/', category: 'AI仕事術', summary: '会社アカウント、機密区分、共有、引用確認のチェックリスト。' },
