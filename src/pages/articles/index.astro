@@ -1,8 +1,94 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { articles } from '../../data/articles';
+
 const base = import.meta.env.BASE_URL;
+const categories = [...new Set(articles.map((article) => article.category))].map((category) => ({
+  name: category,
+  count: articles.filter((article) => article.category === category).length,
+}));
 ---
 <BaseLayout title="記事一覧 | ラクシゴト研究所" description="生成AI、業務効率化、在宅勤務に関する実践ガイドと比較記事の一覧です。">
-<section class="article" style="width:min(1080px,calc(100% - 32px))"><span class="eyebrow">Guides</span><h1>記事一覧</h1><p class="lead">ツールやサービスを申し込む前に確認したい判断基準を、実務目線で整理しています。</p><div class="grid article-list" style="margin-top:32px">{articles.map((article) => <article class="card"><span class="badge">{article.category}</span><h2 style="font-size:1.2rem;margin:14px 0 8px"><a href={`${base}articles/${article.path}`}>{article.title}</a></h2><p>{article.summary}</p><span class="meta">ガイドを読む →</span></article>)}</div></section>
+  <section class="article article-index">
+    <span class="eyebrow">Guides</span>
+    <h1>記事一覧</h1>
+    <p class="lead">ツールやサービスを申し込む前に確認したい判断基準を、実務目線で整理しています。</p>
+
+    <div class="category-filter" data-category-filter hidden>
+      <div class="category-filter-heading">
+        <h2>テーマから探す</h2>
+        <p id="article-count" class="meta" aria-live="polite">全{articles.length}件の記事</p>
+      </div>
+      <div class="category-filter-scroll" aria-label="記事のテーマで絞り込む">
+        <button class="category-chip" type="button" data-category="all" aria-pressed="true">
+          すべて <span>{articles.length}</span>
+        </button>
+        {categories.map((category) => (
+          <button class="category-chip" type="button" data-category={category.name} aria-pressed="false">
+            {category.name} <span>{category.count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid article-list">
+      {articles.map((article) => (
+        <article class="card" data-article-category={article.category}>
+          <span class="badge">{article.category}</span>
+          <h2><a href={`${base}articles/${article.path}`}>{article.title}</a></h2>
+          <p>{article.summary}</p>
+          <span class="meta">ガイドを読む →</span>
+        </article>
+      ))}
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  const filter = document.querySelector<HTMLElement>('[data-category-filter]');
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('.category-chip')];
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-article-category]')];
+  const count = document.querySelector<HTMLElement>('#article-count');
+  const availableCategories = new Set(buttons.map((button) => button.dataset.category));
+
+  const selectCategory = (requestedCategory: string | null, updateUrl = false) => {
+    const category = requestedCategory && availableCategories.has(requestedCategory) ? requestedCategory : 'all';
+    let visibleCount = 0;
+
+    buttons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.category === category));
+    });
+
+    cards.forEach((card) => {
+      const visible = category === 'all' || card.dataset.articleCategory === category;
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    if (count) {
+      count.textContent = category === 'all'
+        ? `全${visibleCount}件の記事`
+        : `${category}の記事 ${visibleCount}件`;
+    }
+
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (category === 'all') url.searchParams.delete('category');
+      else url.searchParams.set('category', category);
+      history.pushState({ category }, '', url);
+    }
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => selectCategory(button.dataset.category ?? 'all', true));
+  });
+
+  window.addEventListener('popstate', () => {
+    selectCategory(new URLSearchParams(window.location.search).get('category'));
+  });
+
+  if (filter) {
+    filter.hidden = false;
+    selectCategory(new URLSearchParams(window.location.search).get('category'));
+  }
+</script>
