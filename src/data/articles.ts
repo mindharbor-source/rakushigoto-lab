@@ -6,6 +6,7 @@ export type ArticleSummary = {
 };
 
 export const articles: ArticleSummary[] = [
+  { title: 'AIエージェントに何を任せる？会社員向け「仕事の切り出し方」5ステップ', path: 'ai-agent-delegation-guide/', category: 'AI仕事術', summary: '向く仕事の選び方、途中承認、停止条件、検収基準を実例で解説。' },
   { title: 'Excelの質問票をAIで効率化する方法', path: 'ai-excel-questionnaire-guide/', category: '業務効率化', summary: 'Gemini・Claudeで回答案と根拠を整理する安全な手順。' },
   { title: 'ChatGPT Workとは？非エンジニア会社員向けにできることを解説', path: 'chatgpt-work-guide/', category: 'AI仕事術', summary: '従来のチャットとの違い、任せやすい仕事、安全な始め方を整理。' },
   { title: 'Xの「AIで簡単に稼げる」情報商材は買うべき？', path: 'ai-info-product-checklist/', category: 'AI副業', summary: '実績、総額、返金条件、販売者情報を10項目で確認。' },
