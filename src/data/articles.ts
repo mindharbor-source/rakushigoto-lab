@@ -6,6 +6,7 @@ export type ArticleSummary = {
 };
 
 export const articles: ArticleSummary[] = [
+  { title: 'GPT-6 Astraとは？会社員の仕事はどう変わる', path: 'gpt-6-astra-business-guide/', category: 'AI仕事術', summary: '新モデルの特徴、従来モデルとの違い、まず試したい3つの業務を解説。' },
   { title: 'AIエージェントを会社で使う前に知っておきたい5つのリスク', path: 'ai-agent-risk-guide/', category: 'AI仕事術', summary: '誤操作・機密情報・プロンプトインジェクションなど5つのリスクと安全策を解説。' },
   { title: '生成AIの費用対効果はどう測る？会社員向け30分テスト', path: 'generative-ai-roi-measurement/', category: 'AI仕事術', summary: '削減時間、修正時間、成果物の合格率から導入効果を測る方法を解説。' },
   { title: 'AIエージェントは「検索AI」と何が違う？会社員が最初に自動化したい5つの仕事', path: 'search-ai-vs-ai-agent/', category: 'AI仕事術', summary: '検索AIとの違いと、会議準備・資料整理など最初に任せやすい5業務を解説。' },
