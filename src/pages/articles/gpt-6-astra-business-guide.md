@@ -10,7 +10,7 @@ affiliate: false
 
 OpenAIは2026年9月3日、新しいAIモデル「GPT-6 Astra」を発表しました。
 
-ニュースでは高いベンチマーク性能が注目されがちですが、非エンジニア会社員にとって重要なのは、**文書・表計算・スライドの作成や、ブラウザを使った褸数工程の仕事を、より正確かつ短時間で任せやすくなったこと**です。
+ニュースでは高いベンチマーク性能が注目されがちですが、非エンジニア会社員にとって重要なのは、**文書・表計算・スライドの作成や、ブラウザを使った複数工程の仕事を、より正確かつ短時間で任せやすくなったこと**です。
 
 一方で、新モデルへ切り替えるだけで仕事が自動的に効率化するわけではありません。この記事では、GPT-6 Astraの変化を会社員目線で整理し、最初に試したい3つの業務と確認方法を解説します。
 
@@ -193,4 +193,4 @@ GPT-6 Astraの重要な変化は、難しい質問へ答えられることだけ
 ## 公式情報
 
 - [GPT-6 Astra: A new generation of intelligence｜OpenAI（2026年9月3日）](https://openai.com/index/gpt-6-astra/)
-- [Safety overview: GPT-6 Astra｜OpenAI（2026年9月3日）](https://openai.com/index/gpt-6-astra-safety/)
+- [Safety overview: GPT-6 Astra｜OpenAI（2026年9月3日）](https://openai.com/index/path-to-astra/)
