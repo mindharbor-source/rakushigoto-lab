@@ -6,6 +6,7 @@ export type ArticleSummary = {
 };
 
 export const articles: ArticleSummary[] = [
+  { title: 'Notionとは？非エンジニア会社員向けの始め方と5つの活用法', path: 'notion-beginner-business-guide/', category: 'AI仕事術', summary: 'メモ・タスク・資料・データベース・AIの使い方を初心者向けに解説。' },
   { title: 'GPT-6 Astraとは？会社員の仕事はどう変わる', path: 'gpt-6-astra-business-guide/', category: 'AI仕事術', summary: '新モデルの特徴、従来モデルとの違い、まず試したい3つの業務を解説。' },
   { title: 'AIエージェントを会社で使う前に知っておきたい5つのリスク', path: 'ai-agent-risk-guide/', category: 'AI仕事術', summary: '誤操作・機密情報・プロンプトインジェクションなど5つのリスクと安全策を解説。' },
   { title: '生成AIの費用対効果はどう測る？会社員向け30分テスト', path: 'generative-ai-roi-measurement/', category: 'AI仕事術', summary: '削減時間、修正時間、成果物の合格率から導入効果を測る方法を解説。' },
